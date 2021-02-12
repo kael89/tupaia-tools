@@ -1,3 +1,5 @@
+import { toArray } from '../utils';
+
 export default class Script {
   db = null;
 
@@ -6,8 +8,12 @@ export default class Script {
   }
 
   printList = items => {
-    items.forEach(item => {
-      this.printLine(`* ${item}`);
+    items.forEach(innerItemInput => {
+      const innerItems = toArray(innerItemInput);
+      this.printLine(`* ${innerItems[0]}`);
+      innerItems.slice(1).forEach(item => {
+        this.printLine(`  ${item}`);
+      });
     });
   };
 

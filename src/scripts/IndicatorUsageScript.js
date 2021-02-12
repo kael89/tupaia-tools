@@ -1,4 +1,10 @@
+import overlayLinks from '../../config/overlayLinks.json';
+import reportLinks from '../../config/reportLinks.json';
 import Script from './Script';
+
+const getOverlayList = reports => reports.map(r => [r, overlayLinks[r]].filter(x => !!x));
+
+const getReportList = overlays => overlays.map(r => [r, reportLinks[r]].filter(x => !!x));
 
 export default class IndicatorUsageScript extends Script {
   indicatorCodes = [];
@@ -15,17 +21,17 @@ export default class IndicatorUsageScript extends Script {
     const reports = await this.selectReportsUsingIndicators();
 
     this.printHeader('Reports using indicators');
-    this.printList(reports);
+    this.printList(getReportList(reports));
     this.printLine(`Count: ${reports.length}`);
     this.printLine();
   };
 
   printOverlaysUsingIndicators = async () => {
-    const reports = await this.selectOverlaysUsingIndicators();
+    const overlays = await this.selectOverlaysUsingIndicators();
 
     this.printHeader('Overlays using indicators');
-    this.printList(reports);
-    this.printLine(`Count: ${reports.length}`);
+    this.printList(getOverlayList(overlays));
+    this.printLine(`Count: ${overlays.length}`);
     this.printLine();
   };
 
