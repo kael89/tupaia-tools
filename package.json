@@ -7,16 +7,27 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "indicator-usage": "node scripts/indicatorUsage.js"
+    "build": "babel src --out-dir bin",
+    "indicator-usage": "yarn run:script indicator-usage",
+    "run:script": "node bin/index.js"
   },
   "eslintConfig": {
-    "extends": "@beyondessential/js"
+    "parser": "babel-eslint",
+    "extends": "@beyondessential/js",
+    "rules": {
+      "no-console": "off"
+    }
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "pg": "^8.5.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.16",
     "@beyondessential/eslint-config-js": "^1.0.1",
     "eslint": "^7.19.0",
     "prettier": "^2.2.1"
