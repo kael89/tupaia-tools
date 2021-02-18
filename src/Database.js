@@ -5,6 +5,7 @@ export default class Database {
 
   // Operator abstraction
   op = {
+    in: values => `IN (${values.map(v => `'${v}'`).join(',')})`,
     matchWord: word => `similar to '%\\m${word}\\M%'`,
   };
 

@@ -1,3 +1,6 @@
+import chalk from 'chalk';
+import fs from 'fs';
+
 import { toArray } from '../utils';
 
 export default class Script {
@@ -22,7 +25,19 @@ export default class Script {
     this.log('-'.repeat(header.length));
   };
 
-  log = (line = '') => {
-    console.log(line);
+  log = (msg = '') => {
+    console.log(msg);
   };
+
+  logSuccess = msg => {
+    console.warn(chalk.green(msg));
+  };
+
+  logWarn = msg => {
+    console.warn(chalk.yellow(msg));
+  };
+
+  readFile = path => fs.readFileSync(path, { encoding: 'utf-8' });
+
+  readJsonFile = path => JSON.parse(this.readFile(path));
 }

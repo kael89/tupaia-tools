@@ -1,0 +1,18 @@
+[
+  "actualMonthlyValuesVsIdeal",
+  "compareValuesByDisasterDate",
+  "composePercentageInGroupByDataClass",
+  "countMatchingDataValuesOverTotal",
+  "dataElementsOverTotalOperational",
+  "frequencyDataElement",
+  "latestDataValuesInGroup",
+  "listDataElementNames",
+  "matrixMostRecentFromChildren",
+  "multiDataValuesLatestSurvey",
+  "percentagesByNominatedPairs",
+  "percentChildrenDataElement",
+  "percentInGroupByDataElement",
+  "rawDataDownloads",
+  "stockouts",
+  "sumPerMetric"
+]
