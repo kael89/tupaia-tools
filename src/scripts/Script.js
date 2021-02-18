@@ -7,22 +7,22 @@ export default class Script {
     this.db = db;
   }
 
-  printList = items => {
+  logList = items => {
     items.forEach(innerItemInput => {
       const innerItems = toArray(innerItemInput);
-      this.printLine(`* ${innerItems[0]}`);
+      this.log(`* ${innerItems[0]}`);
       innerItems.slice(1).forEach(item => {
-        this.printLine(`  ${item}`);
+        this.log(`  ${item}`);
       });
     });
   };
 
-  printHeader = header => {
-    this.printLine(header);
-    this.printLine('-'.repeat(header.length));
+  logHeader = header => {
+    this.log(header);
+    this.log('-'.repeat(header.length));
   };
 
-  printLine = (line = '') => {
+  log = (line = '') => {
     console.log(line);
   };
 }
