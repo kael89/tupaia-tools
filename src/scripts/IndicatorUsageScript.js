@@ -1,10 +1,10 @@
-import overlayLinks from '../../config/overlayLinks.json';
-import reportLinks from '../../config/reportLinks.json';
+import OVERLAY_LINKS from '../../config/overlayLinks.json';
+import REPORT_LINKS from '../../config/reportLinks.json';
 import Script from './Script';
 
-const getOverlayList = reports => reports.map(r => [r, overlayLinks[r]].filter(x => !!x));
+const getOverlayList = reports => reports.map(r => [r, OVERLAY_LINKS[r]].filter(x => !!x));
 
-const getReportList = overlays => overlays.map(r => [r, reportLinks[r]].filter(x => !!x));
+const getReportList = overlays => overlays.map(r => [r, REPORT_LINKS[r]].filter(x => !!x));
 
 export default class IndicatorUsageScript extends Script {
   indicatorCodes = [];
