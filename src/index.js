@@ -14,7 +14,6 @@ dotenv.config();
 
 run()
   .then(() => {
-    console.log('then');
     process.exit(StatusCode.SUCCESS);
   })
   .catch(error => {
