@@ -21,8 +21,8 @@ export default class Script {
   };
 
   logHeader = header => {
-    this.log(header);
-    this.log('-'.repeat(header.length));
+    this.logSuccess(header);
+    this.logSuccess('-'.repeat(header.length));
   };
 
   log = (msg = '') => {
@@ -30,11 +30,15 @@ export default class Script {
   };
 
   logSuccess = msg => {
-    console.warn(chalk.green(msg));
+    console.log(chalk.green(msg));
   };
 
   logWarn = msg => {
     console.warn(chalk.yellow(msg));
+  };
+
+  logInfo = msg => {
+    console.warn(chalk.cyan(msg));
   };
 
   readFile = path => fs.readFileSync(path, { encoding: 'utf-8' });

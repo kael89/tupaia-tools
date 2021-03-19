@@ -9,6 +9,7 @@
   "scripts": {
     "build": "babel src --out-dir bin",
     "data-element-name-usage": "yarn run:script data-element-name-usage",
+    "data-element-viz-usage": "yarn run:script data-element-viz-usage",
     "indicator-usage": "yarn run:script indicator-usage",
     "run:script": "node bin/index.js"
   },

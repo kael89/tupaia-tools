@@ -22,7 +22,7 @@ export default class IndicatorUsageScript extends Script {
 
     this.logHeader('Reports using indicators');
     this.logList(getReportList(reports));
-    this.log(`Count: ${reports.length}`);
+    this.logInfo(`Count: ${reports.length}`);
     this.log();
   };
 
@@ -31,7 +31,7 @@ export default class IndicatorUsageScript extends Script {
 
     this.logHeader('Overlays using indicators');
     this.logList(getOverlayList(overlays));
-    this.log(`Count: ${overlays.length}`);
+    this.logInfo(`Count: ${overlays.length}`);
     this.log();
   };
 
