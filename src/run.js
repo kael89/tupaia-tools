@@ -1,5 +1,4 @@
 import Database from './Database';
-import Exception from './Exception';
 import scripts from './scripts';
 
 export default async () => {
@@ -17,7 +16,7 @@ export default async () => {
 const getScript = () => {
   const [, , scriptName] = process.argv;
   if (!(scriptName in scripts)) {
-    throw new Exception(`Unknown script: '${scriptName}'`);
+    return scripts.help;
   }
   return scripts[scriptName];
 };

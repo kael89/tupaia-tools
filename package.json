@@ -1,17 +1,14 @@
 {
   "name": "tupaia-tools",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "bin": "bin/index.js",
   "scripts": {
-    "build": "babel src --out-dir bin",
-    "data-element-name-usage": "yarn run:script data-element-name-usage",
-    "data-element-viz-usage": "yarn run:script data-element-viz-usage",
-    "indicator-usage": "yarn run:script indicator-usage",
-    "run:script": "node bin/index.js"
+    "build": "rm -rf bin && babel src --out-dir bin",
+    "tupaia-tools": "node bin/index.js"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
