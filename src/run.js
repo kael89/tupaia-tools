@@ -16,7 +16,10 @@ export default async () => {
 const getScript = () => {
   const [, , scriptName] = process.argv;
   if (!(scriptName in scripts)) {
-    return scripts.help;
+    return () => {
+      scripts.help();
+      process.exit(1);
+    };
   }
   return scripts[scriptName];
 };

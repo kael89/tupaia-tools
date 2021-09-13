@@ -1,9 +1,9 @@
 import DataElementNameUsageScript from './DataElementNameUsageScript';
 import DataElementVizUsageScript from './DataElementVizUsageScript';
-import IndicatorUsageScript from './IndicatorUsageScript';
+import VizesUsingIndicatorsScript from './VizesUsingIndicatorsScript';
 import Script from './Script';
 
-const createScript = ScriptClass => db => new ScriptClass(db).run();
+const createScript = ScriptClass => db => new ScriptClass(db).runScript();
 
 export default class HelpScript extends Script {
   run = async () => {
@@ -19,5 +19,5 @@ export const scripts = {
   dataElementNameUsage: createScript(DataElementNameUsageScript),
   dataElementVizUsage: createScript(DataElementVizUsageScript),
   help: createScript(HelpScript),
-  indicatorUsage: createScript(IndicatorUsageScript),
+  vizesUsingIndicators: createScript(VizesUsingIndicatorsScript),
 };

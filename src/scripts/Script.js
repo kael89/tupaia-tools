@@ -4,11 +4,34 @@ import fs from 'fs';
 import { toArray } from '../utils';
 
 export default class Script {
+  /**
+   * @protected
+   *
+   * Override in subclasses to specify a help text for the scritp
+   */
+  help = '';
+
   db = null;
 
   constructor(db) {
     this.db = db;
   }
+
+  /**
+   * @abstract
+   * @returns {Promise}
+   */
+  run = () => {
+    throw new Error(`Subclasses of Script must implement the "run" method`);
+  };
+
+  runScript = async () => {
+    if (this.help) {
+      this.logInfo(toArray(this.help).join('\n'));
+      this.log();
+    }
+    await this.run();
+  };
 
   logList = items => {
     items.forEach(innerItemInput => {
